@@ -67,6 +67,10 @@ class App {
 
     this.app.get('/callback', (req: Request, res: Response) => {
 
+      // https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-users-profile
+      // https://api.spotify.com/v1/users/127082625
+      // where '127082625' is my user id
+
       // your application requests refresh and access tokens
       // after checking the state parameter
 
@@ -101,7 +105,8 @@ class App {
               refresh_token = body.refresh_token;
 
             var options = {
-              url: 'https://api.spotify.com/v1/me',
+              // url: 'https://api.spotify.com/v1/me',
+              url: 'https://api.spotify.com/v1/users/127082625',
               headers: { 'Authorization': 'Bearer ' + access_token },
               json: true
             };
