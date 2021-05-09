@@ -71,6 +71,9 @@ class App {
       // https://api.spotify.com/v1/users/127082625
       // where '127082625' is my user id
 
+      // https://developer.spotify.com/documentation/web-api/reference/#category-playlists
+      // https://api.spotify.com/v1/me/playlists?limit=10&offset=5
+
       // your application requests refresh and access tokens
       // after checking the state parameter
 
@@ -106,7 +109,9 @@ class App {
 
             var options = {
               // url: 'https://api.spotify.com/v1/me',
-              url: 'https://api.spotify.com/v1/users/127082625',
+              // url: 'https://api.spotify.com/v1/users/127082625',
+              url: 'https://api.spotify.com/v1/me/playlists?limit=10&offset=5',
+
               headers: { 'Authorization': 'Bearer ' + access_token },
               json: true
             };
